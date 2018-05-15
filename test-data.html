@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="vue.js">
+  </script>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+    {{arr}}
+    {{obj.color}}
+    {{msg|upperCase}}
+    {{msg|capitalize}}
+
+    <!--{{data.msg}}-->
+    <!--{{data.arr}}-->
+    <!--{{data.obj.color}}-->
+  </div>
+
+<script>
+  var data={
+    msg:'预售双十一产品',
+    arr:[1,2,3],
+    obj:{
+      color:'red',
+      title:'我正在梳理vue.js的基础知识'
+    }
+  }
+  var demo={
+    color:'red',
+    obj:{
+      num:100,
+      say:[1,2,3]
+    }
+  }
+
+  var test={};
+  test.color=demo.color;
+  test.obj=demo.obj;
+  console.log(test);
+
+data.msg="我要尝试其它数据";
+  data.obj.color='blue';
+  data.msg="abc";
+
+
+  var vm=new Vue({
+    el:'#app',
+    data:data
+  })
+
+  console.log(data.msg);
+  console.log(vm.msg);
+</script>
+
+</body>
+</html>

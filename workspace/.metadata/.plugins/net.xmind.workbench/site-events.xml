@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site-events>
+<events>
+<event action-text="Upgrade" id="cloud_shutdown_xmind7" open-external="true" prompt="once" style="popup" url="https://www.xmind.net/download/?ref=popup_clouddown">XMind Cloud service has been officially shut down on 31 Jan, 2018. Please upgrade to the latest version.</event>
+<event id="0413blog2" open-external="true" prompt="once" style="popup" url="http://www.xmind.net/blog/en/2018/04/xmind-is-recruiting-participants-for-its-workshop/?ref=180413blog">Pre-apply for XMind Workshop</event>
+</events>
+</site-events>

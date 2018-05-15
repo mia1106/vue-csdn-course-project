@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+ <div id="ickt">
+   <h1>学习路由的使用</h1>
+   <!-- 第一步  定义渲染的容器元素-->
+   <router-view></router-view>
+ </div>
+
+<!--引入库文件-->
+ <script type="text/javascript" src="js/vue.js"></script>
+ <script type="text/javascript" src="vue-router/dist/vue-router.js"></script>
+
+ <script>
+   //第二步定义组件
+   var myHome ={
+     template:'<h2>home</h2>'
+
+   }
+   var myDetail={
+     template:'<h2>detail</h2>'
+   }
+
+   var myList={
+     template:'<h2>list</h2>'
+   }
+
+   //第三步 定义规则
+
+   var routes=[
+     {
+        path:'/home',
+       name:'home',
+       component:myHome
+     },
+     {
+       path:'/detail',
+       name:'detail',
+       component:myDetail
+     },
+     {
+       path:'/list',
+       name:'list',
+       component:myList
+     }
+   ]
+
+   //第四部 实例化路由
+   var router=new VueRouter({
+     routes:routes
+   })
+
+   //第五步 注册路由
+   var app=new Vue({
+     el:'#ickt',
+     data:{},
+     //注册路由
+     router:router
+   })
+
+ </script>
+
+
+
+
+</body>
+</html>

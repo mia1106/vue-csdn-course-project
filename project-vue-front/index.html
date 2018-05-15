@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,width=device-width"/>
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
+
+</head>
+<body>
+  <div id="app">
+    <!-- header头部-->
+    <header class="header">
+      <div class="go-back">
+        <span class="arrow">
+          <span class="arrow green"></span>
+        </span>
+      </div>
+      <div class="login">login</div>
+      <h1>爱学习爱学习网站</h1>
+    </header>
+    <div class="search">
+      <input type="text" placeholder="请输入搜索关键字"/>
+    </div>
+    <!-- 第一步：自定元素组件-->
+    <!--<home></home>-->
+    <!--<list></list>-->
+    <!--<detail></detail>-->
+
+    <!-- 使用  component 以动态控制页面之间的切换-->
+    <component :is="view" :query="query">
+
+    </component>
+  </div>
+
+
+<!-- 定义首页模板-->
+  <template id="tpl_home">
+    <section class="home">
+      <ul class="types clearfix">
+        <li v-for="item in types">
+          <a :href="'#/list/type/'+item.id">
+            <img :src="item.url" alt=""/>
+            <span>{{item.text}}</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="ad clearfix">
+        <li v-for="(item,index) in ad">
+          <a :href="'#/detail/'+item.ad">
+            <h3 :class="'color-'+index">{{item.title}}</h3>
+            <p>{{item.description}}</p>
+            <img :src="'img/icon/'+item.url" alt=""/>
+          </a>
+        </li>
+      </ul>
+      <div class="guess">
+        <h2 class="title">猜你喜欢</h2>
+        <ul class="items">
+          <li v-for="item in list" class="clearfix">
+            <a :href="'#/detail/'+item.id">
+              <img :src="'img/icon/'+item.img" alt=""/>
+              <div class="content">
+                <h3>{{item.title}}</h3>
+                <p>
+                  <span class="price">{{item.price|price}}</span>
+                  <span class="origin-price">门市价{{item.originPrice|price}}</span>
+                  <span class="sales">销量{{item.sales}}</span>
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </template>
+<!-- 定义列表页-->
+  <template id="tpl_list">
+    <section class="list">
+      <ul class="orders clearfix">
+        <li v-for="item in orders" @click="itemOrder(item.id)">
+          <span>{{item.text}}</span>
+          <span class="arrow"></span>
+        </li>
+      </ul>
+      <ul class="items">
+        <li v-for="item in list">
+          <a :href="'#/detail/'+item.id">
+            <img :src="'img/list/'+item.img" alt=""/>
+            <div class="content">
+              <h3>{{item.title}}</h3>
+              <p>
+                <span class="price">{{item.price|price}}</span>
+                <span class="origin-price">原价{{item.originPrice|price}}</span>
+                <span class="sales">销量{{item.sales}}</span>
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <!-- 其它团购信息-->
+      <div @click="showOthers" class="load-more" v-if="other.length">
+        <span>查看其它{{other.length}}条团购</span>
+        <span class="arrow-ml">
+        </span>
+      </div>
+    </section>
+  </template>
+<!--引入脚本-->
+<script src="js/vue.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
