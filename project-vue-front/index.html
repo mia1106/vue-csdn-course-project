@@ -21,7 +21,11 @@
       <h1>爱学习爱学习网站</h1>
     </header>
     <div class="search">
-      <input type="text" placeholder="请输入搜索关键字"/>
+      <input
+          @keyUp.enter="showSearchResult"
+          type="text"
+          placeholder="请输入搜索关键字"
+          v-model="search"/>
     </div>
     <!-- 第一步：自定元素组件-->
     <!--<home></home>-->
@@ -29,7 +33,7 @@
     <!--<detail></detail>-->
 
     <!-- 使用  component 以动态控制页面之间的切换-->
-    <component :is="view" :query="query">
+    <component :is="view" :query="query" :search="searchValue">
 
     </component>
   </div>
@@ -85,7 +89,8 @@
         </li>
       </ul>
       <ul class="items">
-        <li v-for="item in list">
+        <!--<li v-for="item in list">-->
+        <li v-for="item in listFilter">
           <a :href="'#/detail/'+item.id">
             <img :src="'img/list/'+item.img" alt=""/>
             <div class="content">

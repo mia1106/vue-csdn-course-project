@@ -77,7 +77,7 @@ var myHome=Vue.extend({
 var list=Vue.extend({
   template:'#tpl_list',
   //接受父组件传递的变量
-  props:['query'],
+  props:['query','search'],
   //定义数据
   data:function(){
     return{
@@ -93,6 +93,22 @@ var list=Vue.extend({
       other:[]
     }
   },
+  //定义动态绑定的数据
+  computed:{
+    //过滤出包含搜索字的条目
+    listFilter:function(v){
+      //对list数据进行过滤
+      var result=[];
+      /*为什么？v可以处理到数据啊*/
+      v.list.forEach(function(item,index){
+        if(item.title.indexOf(v.search)>=0){
+          result.push(item)
+        }
+      })
+      // 将结果返回
+      return result;
+    }
+  },
   //定义方法
   methods:{
     //点击查看
@@ -102,8 +118,18 @@ var list=Vue.extend({
     },
     //点击排序
     itemOrder:function(id){
-      console.log(id);
-
+      //优惠排序
+      if(id === 'discount'){
+        //对list排序，比较原价-现价
+        this.list.sort(function(a,b){
+          return (a.originPrice-a.price)-(b.originPrice-b.price)
+        })
+      }else{
+        //排列顺序
+        this.list.sort(function(a,b){
+          return a[id]-b[id]
+        })
+      }
     }
   },
 
@@ -142,7 +168,16 @@ var vm=new Vue({
   data:{
     view:list,
     //存储路由数据
-    query:[]
+    query:[],
+    //存储搜索内容
+    search:'',
+    //传递给子组建的
+    searchValue:''
+  },
+  methods:{
+    showSearchResult:function(){
+      this.searchValue=this.search;
+    }
   }
 })
 //定义路由方法
