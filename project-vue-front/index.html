@@ -12,7 +12,7 @@
   <div id="app">
     <!-- header头部-->
     <header class="header">
-      <div class="go-back">
+      <div class="go-back" @click="goBack">
         <span class="arrow">
           <span class="arrow green"></span>
         </span>
@@ -20,7 +20,7 @@
       <div class="login">login</div>
       <h1>爱学习爱学习网站</h1>
     </header>
-    <div class="search">
+    <div class="search" v-show="view!=='detail'">
       <input
           @keyUp.enter="showSearchResult"
           type="text"
@@ -111,6 +111,58 @@
         </span>
       </div>
     </section>
+  </template>
+<!-- 定义详情页-->
+  <template id="tpl_detail">
+    <section class="detail">
+      <div class="banner">
+        <img v-if="data.src" :src="'img/item/'+data.src" alt=""/>
+        <h1>{{data.title}}</h1>
+        <p>{{data.description}}</p>
+      </div>
+      <div class="part-price">
+        <span class="price">
+          <span class="num">{{data.price}}</span> 元
+        </span>
+        <span class="origin-price">门市价{{data.originPrice}} </span>
+        <span class="btn">立即购买</span>
+      </div>
+      <ul class="part-sales clearfix">
+        <li>支持立即退货</li>
+        <li>支持随时退货</li>
+        <li>销量{{data.sales}}</li>
+      </ul>
+      <div class="part-store module">
+        <div class="module-header">店家信息</div>
+        <div class="module-body">
+          <p>{{data.storeName}}</p>
+          <p>{{data.storeAddress}}</p>
+        </div>
+        <div class="module-footer">
+          查看{{data.storeNum}}家分店
+        </div>
+        <div class="part-buy module">
+          <div class="module-header">购买须知</div>
+          <div class="module-body">
+            <ul>
+              <li>
+                <h3>有效期</h3>
+                <p>{{data.validateTime}}</p>
+              </li>
+              <li>
+                <h3>使用日期</h3>
+                <p>{{data.useTime}}</p>
+              </li>
+              <li>
+                <h3>使用规则</h3>
+                <p v-for="item in data.rules">{{item}}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
   </template>
 <!--引入脚本-->
 <script src="js/vue.js"></script>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,width=device-width"/>
+  <title></title>
+  <link rel="stylesheet" href="./lib/bootstrap.css"/>
+  <link rel="stylesheet" href="./reset.css"/>
+
+</head>
+<body>
+<div id="app">
+  <!-- header头部-->
+  <header class="header">
+    <div class="go-back" @click="goBack">
+        <span class="arrow">
+          <span class="arrow green"></span>
+        </span>
+    </div>
+    <div class="login">login</div>
+    <h1>爱学习爱学习网站</h1>
+  </header>
+  <div class="search" v-show="view!=='detail'">
+    <input
+        @keyUp.enter="showSearchResult"
+        type="text"
+        placeholder="请输入搜索关键字"
+        v-model="search"/>
+  </div>
+  <!-- 第一步：自定元素组件-->
+  <!--<home></home>-->
+  <!--<list></list>-->
+  <!--<detail></detail>-->
+
+  <!-- 使用  component 以动态控制页面之间的切换-->
+  <component :is="view" :query="query" :search="searchValue">
+
+  </component>
+</div>
+
+
+<!-- 定义首页模板-->
+<template id="tpl_home">
+  <section class="home">
+    <ul class="types clearfix">
+      <li v-for="item in types">
+        <a :href="'#/list/type/'+item.id">
+          <img :src="item.url" alt=""/>
+          <span>{{item.text}}</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="ad clearfix">
+      <li v-for="(item,index) in ad">
+        <a :href="'#/detail/'+item.ad">
+          <h3 :class="'color-'+index">{{item.title}}</h3>
+          <p>{{item.description}}</p>
+          <img :src="'img/icon/'+item.url" alt=""/>
+        </a>
+      </li>
+    </ul>
+    <div class="guess">
+      <h2 class="title">猜你喜欢</h2>
+      <ul class="items">
+        <li v-for="item in list" class="clearfix">
+          <a :href="'#/detail/'+item.id">
+            <img :src="'img/icon/'+item.img" alt=""/>
+            <div class="content">
+              <h3>{{item.title}}</h3>
+              <p>
+                <span class="price">{{item.price|price}}</span>
+                <span class="origin-price">门市价{{item.originPrice|price}}</span>
+                <span class="sales">销量{{item.sales}}</span>
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</template>
+<!-- 定义列表页-->
+<template id="tpl_list">
+  <section class="list">
+    <ul class="orders clearfix">
+      <li v-for="item in orders" @click="itemOrder(item.id)">
+        <span>{{item.text}}</span>
+        <span class="arrow"></span>
+      </li>
+    </ul>
+    <ul class="items">
+      <!--<li v-for="item in list">-->
+      <li v-for="item in listFilter">
+        <a :href="'#/detail/'+item.id">
+          <img :src="'img/list/'+item.img" alt=""/>
+          <div class="content">
+            <h3>{{item.title}}</h3>
+            <p>
+              <span class="price">{{item.price|price}}</span>
+              <span class="origin-price">原价{{item.originPrice|price}}</span>
+              <span class="sales">销量{{item.sales}}</span>
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <!-- 其它团购信息-->
+    <div @click="showOthers" class="load-more" v-if="other.length">
+      <span>查看其它{{other.length}}条团购</span>
+        <span class="arrow-ml">
+        </span>
+    </div>
+  </section>
+</template>
+<!-- 定义详情页-->
+<template id="tpl_detail">
+  <section class="detail">
+    <div class="banner">
+      <img v-if="data.src" :src="'img/item/'+data.src" alt=""/>
+      <h1>{{data.title}}</h1>
+      <p>{{data.description}}</p>
+    </div>
+    <div class="part-price">
+        <span class="price">
+          <span class="num">{{data.price}}</span> 元
+        </span>
+      <span class="origin-price">门市价{{data.originPrice}} </span>
+      <span class="btn">立即购买</span>
+    </div>
+    <ul class="part-sales clearfix">
+      <li>支持立即退货</li>
+      <li>支持随时退货</li>
+      <li>销量{{data.sales}}</li>
+    </ul>
+    <div class="part-store module">
+      <div class="module-header">店家信息</div>
+      <div class="module-body">
+        <p>{{data.storeName}}</p>
+        <p>{{data.storeAddress}}</p>
+      </div>
+      <div class="module-footer">
+        查看{{data.storeNum}}家分店
+      </div>
+      <div class="part-buy module">
+        <div class="module-header">购买须知</div>
+        <div class="module-body">
+          <ul>
+            <li>
+              <h3>有效期</h3>
+              <p>{{data.validateTime}}</p>
+            </li>
+            <li>
+              <h3>使用日期</h3>
+              <p>{{data.useTime}}</p>
+            </li>
+            <li>
+              <h3>使用规则</h3>
+              <p v-for="item in data.rules">{{item}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</template>
+<!--引入脚本-->
+<script src="./lib/vue.js"></script>
+<script src="./lib/sea.js"></script>
+<!--<script src="./lib/bootstrap.js"></script>-->
+<script>
+  seajs.config({
+    base:'/static'
+  })
+
+  seajs.use('router/router.js')
+//  seajs.use('router/router.js')
+</script>
+
+</body>
+</html>

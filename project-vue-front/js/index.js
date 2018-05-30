@@ -64,7 +64,6 @@ var myHome=Vue.extend({
     //请求成功，存储数据
     Util.ajax('data/home.json',function(res){
       if(res&&res.errno===0){
-        console.log(res);
         that.ad=res.data.ad;
         that.list=res.data.list;
       }
@@ -154,7 +153,25 @@ var list=Vue.extend({
   }
 });
 var detail=Vue.extend({
-  template:'<h1>detail</h1>'
+  template:'#tpl_detail',
+  //绑定数据
+  data:function(){
+    return{
+      data:{
+
+      }
+    }
+  },
+  //请求数据
+  created:function(){
+    var me=this;
+    //请求数据
+    Util.ajax('data/detail.json?id='+me.$parent.query[0],function(res){
+      if(res&&res.error===0){
+        me.data=res.data;
+      }
+    })
+  }
 })
 
 /*第三步注册组件*/
@@ -177,6 +194,10 @@ var vm=new Vue({
   methods:{
     showSearchResult:function(){
       this.searchValue=this.search;
+    },
+    //返回按钮
+    goBack:function(){
+      history.go(-1);
     }
   }
 })

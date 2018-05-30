@@ -18,6 +18,7 @@ repositories/file\:_D\:_js_vue.js_vue-csdn-course-project_p2_org.eclipse.equinox
 repositories/file\:_D\:_js_vue.js_vue-csdn-course-project_p2_org.eclipse.equinox.p2.core_cache/uri=file\:/D\:/js/vue.js/vue-csdn-course-project/p2/org.eclipse.equinox.p2.core/cache/
 repositories/file\:_D\:_js_vue.js_vue-csdn-course-project_p2_org.eclipse.equinox.p2.core_cache/version=1.0.0
 repositories/file\:_D\:_js_vue.js_vue-learn/description=
+repositories/file\:_D\:_js_vue.js_vue-learn/enabled=true
 repositories/file\:_D\:_js_vue.js_vue-learn/isSystem=true
 repositories/file\:_D\:_js_vue.js_vue-learn/name=Bundle pool
 repositories/file\:_D\:_js_vue.js_vue-learn/provider=

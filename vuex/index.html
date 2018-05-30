@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title></title>
+  <title>vuex</title>
 </head>
 <body>
  <div id="ickt">
@@ -10,6 +10,36 @@
    <!-- 第一步  定义渲染的容器元素-->
    <router-view></router-view>
  </div>
+ <template id="tpl_detail">
+   <div>
+     <h2>detail</h2>
+     <p>id:{{$route.params.id}}</p>
+     <p>num:{{$route.query.num}}</p>
+     <p>query:{{$route.query}}</p>
+     <p>hash:{{$route.hash}}</p>
+   </div>
+ </template>
+ <template id="tpl_home">
+   <div>
+      <h2>home</h2>
+     <!-- 创建导航-->
+     <a href="#/list">list</a>
+     <!-- vue:路由导航-->
+     <router-link
+         v-text="'首页'"
+         tag="span"
+         to="/home"></router-link>
+     <router-link
+         v-text="'列表页'"
+         to="/list"
+         ></router-link>
+
+     <!-- 渲染容器：嵌套路由-->
+      <router-view>
+
+      </router-view>
+   </div>
+ </template>
 
 <!--引入库文件-->
  <script type="text/javascript" src="js/vue.js"></script>
@@ -18,15 +48,21 @@
  <script>
    //第二步定义组件
    var myHome ={
-     template:'<h2>home</h2>'
+     template:'#tpl_home'
 
    }
    var myDetail={
-     template:'<h2>detail</h2>'
+     template:'#tpl_detail',
+     created:function(){
+       console.log(this)
+     }
    }
 
    var myList={
      template:'<h2>list</h2>'
+   }
+   var Page={
+     template:'<h2>我是page</h2>'
    }
 
    //第三步 定义规则
@@ -35,10 +71,15 @@
      {
         path:'/home',
        name:'home',
-       component:myHome
+       component:myHome,
+       //定义子路由规则(嵌套路由需要在这里定义)
+       children:[
+         {path:'/page',component:Page},
+         {path:'search',component:Page}
+       ]
      },
      {
-       path:'/detail',
+       path:'/detail/:id',
        name:'detail',
        component:myDetail
      },
@@ -46,6 +87,16 @@
        path:'/list',
        name:'list',
        component:myList
+     },
+       //当输入test,则重定向到列表页
+     {
+       path:'/test',
+       redirect:'list'
+     },
+       //其它所有页面默认进入首页
+     {
+       path:'*',
+       redirect:'home'
      }
    ]
 

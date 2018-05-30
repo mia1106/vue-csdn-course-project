@@ -1,0 +1,71 @@
+/*首页样式*/
+/*首页icon样式*/
+.home ul.types{
+  padding:10px 20px;
+  background:#fff;
+}
+.home .types li{
+  float:left;
+  width:20%;
+  text-align:center;
+  background:#fff;
+}
+.home .types li img{
+  width:60%;
+  display:block;
+  margin:0 auto;//是块状元素水平居中的方法
+}
+
+.home .types li span{
+  font-size:12px;
+  margin:10px 0;
+  display:inline-block;
+}
+
+/*首页的广告样式*/
+.home ul.ad{
+  background:#fff;
+}
+.home ul.ad li{
+  float:left;
+  width:33.3333%;
+  background:#fff;
+  padding-bottom:10px;
+  text-align:center;
+  border-right:1px solid #ddd;
+}
+
+.home .ad li h3{
+  padding:10px 5px 0 5px;
+  font-size:16px;
+  font-weight:900;
+}
+
+.home .ad li .color-0{
+  color:red;
+}
+.home .ad li .color-1{
+  color:purple;
+}
+.home .ad li .color-2{
+  color:green;
+}
+.home .ad li img{
+  width:60%;
+}
+
+/*home- list*/
+
+.home .guess{
+  background:#fff;
+}
+
+.home .guess .title{
+  height:44px;
+  line-height:44px;
+  font-size:22px;
+  /*margin:0 10px;*/
+  padding:0 10px;
+  font-weight:normal;
+  border:1px solid #ccc;
+}

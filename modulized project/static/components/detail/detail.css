@@ -1,0 +1,92 @@
+/*详情页*/
+.detail{
+  color:#333;
+  font-size:14px;
+}
+.detail .banner{
+  position:relative;
+  color:#fff;
+}
+
+.detail .banner img{
+  width:100%;
+  display:block;
+}
+.detail .banner h1,
+.detail .banner p{
+  position:absolute;
+  left:20px;
+  bottom:15px;
+}
+.detail .banner h1{
+  bottom:40px;
+}
+
+.detail .part-price{
+  height: 60px;
+  line-height:60px;
+  padding:0 10px;
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.detail .part-price .price{
+  color:#06c1ae;
+}
+.detail .part-price .num{
+  font-size:40px;
+}
+
+.detail .part-price .btn{
+  padding:8px 15px;
+  background:#f60;
+  color:#fff;
+  font-size:12px;
+  float:right;
+  margin-top:13px;
+}
+.detail .part-sale{
+  background: #fff;
+  padding:10px 10px 15px;
+
+}
+
+.detail .part-sales li{
+  width:50%;
+  float:left;
+  height:30px;
+  line-height:30px;
+  color:yellowgreen;
+}
+
+.detail .part-sales li:last-child{
+  color:#333;
+}
+.detail .module{
+  padding:10px;
+  background:#fff;
+  margin-bottom:10px;
+}
+
+.detail .module-header{
+  height:50px;
+  line-height:50px;
+  border-bottom:1px solid #ddd;
+  font-size:24px;
+}
+.detail .module-body{
+  padding:10px 0;
+  line-height:30px;
+}
+.detail .module-body h3{
+  color:#f90;
+  font-weight:normal;
+}
+
+.detail .module-footer{
+  border-top:1px solid #ccc;
+  height:30px;
+  line-height:30px;
+  color:skyblue;
+  padding-top:5px;
+}
