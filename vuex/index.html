@@ -8,7 +8,7 @@
  <div id="ickt">
    <h1>学习路由的使用</h1>
    <!-- 第一步  定义渲染的容器元素-->
-   <router-view></router-view>
+   <router-view :category="mymy"></router-view>
  </div>
  <template id="tpl_detail">
    <div>
@@ -33,6 +33,8 @@
          v-text="'列表页'"
          to="/list"
          ></router-link>
+     <span>num:</span> <span>{{gainData.number}}</span>
+     <div>testHowToDeliverData:{{category}}</div>
 
      <!-- 渲染容器：嵌套路由-->
       <router-view>
@@ -44,11 +46,40 @@
 <!--引入库文件-->
  <script type="text/javascript" src="js/vue.js"></script>
  <script type="text/javascript" src="vue-router/dist/vue-router.js"></script>
+ <script src="vue-resource/dist/vue-resource.js"></script>
 
  <script>
    //第二步定义组件
    var myHome ={
-     template:'#tpl_home'
+     template:'#tpl_home',
+     props:['category'],
+     data:function(){
+       return{
+         gainData:{}
+       }
+     },
+     created:function(){
+       this.$http
+         //url:data.json?test=hello
+           .get('data.json',{
+         params:{
+           test:'hello'
+         }
+       }).then(function(res){
+             console.log(this,arguments)
+             console.log(res.data)
+             this.gainData=res.data.data;
+       });
+
+       this.$http.get('data.json',{
+         params:{test:'world'}
+       }).then(res=>{console.log('请求成功',res.data)});
+
+       this.$http.post('data.json',{
+         names:{firstName:'mia',lastName:'Li'}
+       }).then(res=>{console.log('post请求成功',res.data)});
+
+     }
 
    }
    var myDetail={
@@ -108,7 +139,9 @@
    //第五步 注册路由
    var app=new Vue({
      el:'#ickt',
-     data:{},
+     data:{
+       mymy:"hello, this world"
+     },
      //注册路由
      router:router
    })

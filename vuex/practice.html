@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="app">
+    <!-- 导航之类公用部分-->
+    <!--路由容器 -->
+    <router-view></router-view>
+  </div>
+<script>
+  //定义组件
+  var home={
+    template:"#tpl_home",
+    data:function(){
+      return{
+        //数据在这里绑定
+      }
+    }
+  };
+  //定义路由规则
+  var routes=[
+      //首页
+    {
+      path:'/home',
+      component:'home'
+    }
+  ];
+  var router=new VueRouter();
+
+  var app=new Vue({
+    el:"#app",
+    data:{},
+    methods:{
+
+    },
+    router:router
+  })
+</script>
+</body>
+</html>
