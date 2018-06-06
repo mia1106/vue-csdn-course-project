@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmind>
 <editors>
-<editor activePart="false" tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\fa95f725-e365-408d-9c94-9ee26404b1ea.xmind.temp">
-<input factoryID="org.xmind.ui.MindMapEditorInputFactory" uri="file:/D:/js/vue.js/vue-csdn-course-project/Vuejs%20%20%20项目.xmind">
-<state tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\fa95f725-e365-408d-9c94-9ee26404b1ea.xmind.temp"/>
+<editor activePart="false" tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\379d360b-d2bb-41c5-87f5-cfa447c1ca00.xmind.temp">
+<input factoryID="org.xmind.ui.MindMapEditorInputFactory" uri="file:/D:/js/vue.js/vue-csdn-course-project/vuejsLearningNotes.xmind">
+<state tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\379d360b-d2bb-41c5-87f5-cfa447c1ca00.xmind.temp"/>
 </input>
 </editor>
-<editor activePart="true" tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\461c907d-ec30-4cd6-a4e5-667c8849a803.xmind.temp">
-<input factoryID="org.xmind.ui.MindMapEditorInputFactory" uri="file:/D:/js/vue.js/vue-csdn-course-project/vuejsLearningNotes.xmind">
-<state tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\461c907d-ec30-4cd6-a4e5-667c8849a803.xmind.temp"/>
+<editor activePart="false" tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\8855b855-bd86-4ed4-a411-d2c052b648a0.xmind.temp">
+<input factoryID="org.xmind.ui.MindMapEditorInputFactory" uri="file:/D:/js/vue.js/vue-csdn-course-project/Vuejs%20%20%20项目.xmind">
+<state tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\8855b855-bd86-4ed4-a411-d2c052b648a0.xmind.temp"/>
+</input>
+</editor>
+<editor activePart="true" tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\a43fa74b-3388-4c03-ba11-edcfb8372a80.xmind.temp">
+<input factoryID="org.xmind.ui.MindMapEditorInputFactory" uri="file:/D:/front-end%20projects/pie-durian/vuejs项目+vue-router&amp;vue-source.xmind">
+<state tempLocation="D:\js\vue.js\vue-csdn-course-project\workspace\temp\workbooks\a43fa74b-3388-4c03-ba11-edcfb8372a80.xmind.temp"/>
 </input>
 </editor>
 </editors>

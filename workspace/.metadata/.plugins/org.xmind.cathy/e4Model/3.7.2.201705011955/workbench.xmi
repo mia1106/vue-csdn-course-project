@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_xMR_oURzEeik-JIh0cqm0w" elementId="org.xmind.cathy.application" contributorURI="platform:/plugin/org.xmind.cathy" selectedElement="_xMR_okRzEeik-JIh0cqm0w" bindingContexts="_xMR_yERzEeik-JIh0cqm0w">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList/>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.xmind.ui.MindMapEditorInputFactory&quot; id=&quot;org.xmind.ui.MindMapEditor&quot; name=&quot;&#x8be6;&#x60c5;&#x6a21;&#x677f;&#x5f00;&#x53d1;&#x7ed3;&#x6784;&quot; tooltip=&quot;D:\front-end projects\pie-durian\&#x8be6;&#x60c5;&#x6a21;&#x677f;&#x5f00;&#x53d1;&#x7ed3;&#x6784;.xmind&quot;>&#xD;&#xA;&lt;persistable uri=&quot;file:/D:/front-end%20projects/pie-durian/&#x8be6;&#x60c5;&#x6a21;&#x677f;&#x5f00;&#x53d1;&#x7ed3;&#x6784;.xmind&quot;>&amp;#x0A;&lt;state/>&#xD;&#xA;&lt;/persistable>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_xMR_okRzEeik-JIh0cqm0w" elementId="org.xmind.cathy.window.main" contributorURI="platform:/plugin/org.xmind.cathy" selectedElement="_xbdrIERzEeik-JIh0cqm0w" label="XMind" x="88" y="242" width="1397" height="768">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_xMR_okRzEeik-JIh0cqm0w" elementId="org.xmind.cathy.window.main" contributorURI="platform:/plugin/org.xmind.cathy" selectedElement="_xbdrIERzEeik-JIh0cqm0w" label="XMind" x="159" y="120" width="1572" height="890">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -15,7 +15,9 @@
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_xbdrIURzEeik-JIh0cqm0w" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_xdhgoERzEeik-JIh0cqm0w">
         <children xsi:type="advanced:Perspective" xmi:id="_xdhgoERzEeik-JIh0cqm0w" elementId="org.xmind.ui.perspective.mindmapping" selectedElement="_xdhgoURzEeik-JIh0cqm0w" label="Mind Mapping" iconURI="platform:/plugin/org.xmind.ui/icons/xmind.16.png">
           <children xsi:type="basic:PartSashContainer" xmi:id="_xdhgoURzEeik-JIh0cqm0w" selectedElement="_xdhgokRzEeik-JIh0cqm0w" horizontal="true">
-            <children xsi:type="advanced:Placeholder" xmi:id="_xdhgokRzEeik-JIh0cqm0w" elementId="org.eclipse.ui.editorss" containerData="10000" ref="_xdfrcERzEeik-JIh0cqm0w"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_xdhgokRzEeik-JIh0cqm0w" elementId="org.eclipse.ui.editorss" containerData="10000" ref="_xdfrcERzEeik-JIh0cqm0w">
+              <tags>StackVisible</tags>
+            </children>
             <children xsi:type="basic:PartStack" xmi:id="_xdhgo0RzEeik-JIh0cqm0w" elementId="org.xmind.ui.stack.right" toBeRendered="false" containerData="0">
               <tags>XStack</tags>
             </children>
@@ -25,6 +27,18 @@
       <children xsi:type="basic:PartStack" xmi:id="_xbdrIkRzEeik-JIh0cqm0w" elementId="stickyFolderRight" toBeRendered="false" containerData="2500">
         <children xsi:type="advanced:Placeholder" xmi:id="_xbdrI0RzEeik-JIh0cqm0w" elementId="org.eclipse.ui.internal.introview" toBeRendered="false" ref="_xbdEEERzEeik-JIh0cqm0w"/>
       </children>
+    </children>
+    <children xsi:type="basic:Part" xmi:id="_-CgkIGVBEeirDaNsGhAi6A" elementId="org.xmind.cathy.part.dashboard" contributorURI="platform:/plugin/org.xmind.cathy" toBeRendered="false" contributionURI="bundleclass://org.xmind.cathy/org.xmind.cathy.internal.dashboard.DashboardPart" label="Home" bindingContexts="_xMR_y0RzEeik-JIh0cqm0w">
+      <persistedState key="org.xmind.cathy.dashboard/selectedPageId" value="org.xmind.ui.part.dashboard.new"/>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_-CgkIWVBEeirDaNsGhAi6A" elementId="org.xmind.ui.popup.dashboard.cloud.mapCollection" contributorURI="platform:/plugin/org.xmind.ui.seawind">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_-CgkImVBEeirDaNsGhAi6A" elementId="org.xmind.ui.popup.dashboard.cloud.mapCollection.moveTo" contributorURI="platform:/plugin/org.xmind.ui.seawind" label="%handledmenuitem.label.move.to" command="_xMyWJkRzEeik-JIh0cqm0w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_-CgkI2VBEeirDaNsGhAi6A" elementId="org.xmind.ui.popup.dashboard.cloud.mapCollection.rename" contributorURI="platform:/plugin/org.xmind.ui.seawind" label="%handledmenuitem.label.rename" command="_xMxu5URzEeik-JIh0cqm0w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_-CgkJGVBEeirDaNsGhAi6A" elementId="org.xmind.ui.popup.dashboard.cloud.mapCollection.duplicate" contributorURI="platform:/plugin/org.xmind.ui.seawind" label="%handledmenuitem.label.duplicate" command="_xMxu_kRzEeik-JIh0cqm0w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_-CgkJWVBEeirDaNsGhAi6A" elementId="org.xmind.ui.popup.dashboard.cloud.mapCollection.delete" contributorURI="platform:/plugin/org.xmind.ui.seawind" label="%handledmenuitem.label.delete" command="_xMyV-URzEeik-JIh0cqm0w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_-CgkJmVBEeirDaNsGhAi6A" elementId="org.xmind.ui.popup.dashboard.cloud.mapCollection.saveAs" contributorURI="platform:/plugin/org.xmind.ui.seawind" label="%handledmenuitem.label.save.as" command="_xMy9CkRzEeik-JIh0cqm0w">
+          <parameters xmi:id="_-CgkJ2VBEeirDaNsGhAi6A" elementId="org.xmind.ui.popup.dashboard.cloud.mapCollection.saveAs.parameter" contributorURI="platform:/plugin/org.xmind.ui.seawind" name="org.xmind.ui.command.saveWorkbookAs.wizardId" value="org.xmind.ui.localFileSaveWizard"/>
+        </children>
+      </menus>
     </children>
     <windows xsi:type="basic:Dialog" xmi:id="_xOb7wERzEeik-JIh0cqm0w" elementId="DIALOG:org.eclipse.ui.views.ProgressView" contributorURI="platform:/plugin/org.xmind.ui.mindmap" toBeRendered="false" label="%part.progress.label" x="0" y="0" width="440" height="337">
       <persistedState key="styleOverride"/>
@@ -398,11 +412,11 @@
   </descriptors>
   <descriptors xmi:id="_W8IhYETZEeaGL5Gu2uBiyA" elementId="org.xmind.ui.modelPart.image" contributorURI="platform:/plugin/org.xmind.ui.mindmap" label="%part.image.label" tooltip="%part.image.tooltip" closeable="true" contributionURI="bundleclass://org.xmind.ui.mindmap/org.xmind.ui.internal.e4models.ImagePart">
     <persistedState key="modelPart.pages.contributionUri" value="bundleclass://org.xmind.ui.gallery/org.xmind.ui.internal.gallery.ClipArtModelPage,bundleclass://org.xmind.ui.iconfinder/org.xmind.ui.internal.iconfinder.IconfinderModelPage"/>
-    <menus xmi:id="_rP_hsWMPEeiUvO61Et96Vw" elementId="org.xmind.ui.modelPart.image.menus.clipArt">
+    <menus xmi:id="_6JUFAWVBEeirDaNsGhAi6A" elementId="org.xmind.ui.modelPart.image.menus.clipArt">
       <tags>ViewMenu</tags>
       <tags>org.xmind.ui.modelPart.image.pages.clipArt</tags>
     </menus>
-    <menus xmi:id="_rQJSsGMPEeiUvO61Et96Vw" elementId="org.xmind.ui.modelPart.image.menus.iconfinder">
+    <menus xmi:id="_6Jd2AGVBEeirDaNsGhAi6A" elementId="org.xmind.ui.modelPart.image.menus.iconfinder">
       <tags>ViewMenu</tags>
       <tags>org.xmind.ui.modelPart.image.pages.iconfinder</tags>
     </menus>
